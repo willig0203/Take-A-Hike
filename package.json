@@ -6,7 +6,27 @@
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
     "express-handlebars": "^6.0.6",
+    "jest": "^28.1.3",
     "mysql2": "^2.3.3",
     "sequelize": "^6.21.3"
-  }
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest"
+  },
+  "name": "take-a-hike",
+  "description": "U of M Group Project Number 2",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willig0203/Take-A-Hike.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/willig0203/Take-A-Hike/issues"
+  },
+  "homepage": "https://github.com/willig0203/Take-A-Hike#readme"
 }
