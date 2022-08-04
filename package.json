@@ -18,7 +18,6 @@
   "description": "U of M Group Project Number 2",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willig0203/Take-A-Hike.git"
