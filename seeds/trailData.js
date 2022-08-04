@@ -6,6 +6,7 @@ const trailData = [
     city: 'Lake Elmo',
     state: 'MN',
     distance_miles: 2.3,
+    description: 'Gentle "hills" over grassland, through some trees, and along a lake.',
     user_id: 1
   },
   {
@@ -13,6 +14,7 @@ const trailData = [
     city: 'Silver Bay',
     state: 'MN',
     distance_miles: 1.5,
+    description: 'Woody trail leading to waterfalls, located in a state park along the shores of Lake Superior.',
     user_id: 2
   },
   {
@@ -20,6 +22,7 @@ const trailData = [
     city: 'Hanapepe',
     state: 'HI',
     distance_miles: 7.9,
+    description: 'Down some steep slopes, across a cliff side along a goat trail, and then a leg busting up to the top. Worth it though for the spectacular views of the NaPali coast',
     user_id: 3
   },
 ];
