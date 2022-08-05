@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Trail extends Model {}
+class Trail extends Model { }
 
 Trail.init(
   {
@@ -26,6 +26,10 @@ Trail.init(
     distance_miles: {
       type: DataTypes.DECIMAL,
       allowNull: false
+    },
+    description: {
+      type: DataTypes.STRING,
+      allowNull: true
     },
     user_id: {
       type: DataTypes.INTEGER,
