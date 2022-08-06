@@ -16,3 +16,4 @@ async function logoutFormHandler(event) {
 document
   .querySelector(".logout-form")
   .addEventListener("submit", logoutFormHandler);
+
