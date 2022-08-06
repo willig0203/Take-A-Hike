@@ -1,1 +1,14 @@
-<div>You are on the homepage</div>
+<ol class="trail-list">
+  <li>
+    <article class="trail">
+      <div class="trail-name">
+        <a href="/trail/{{id}}">{{trail_name}}</a>
+        <span>{{city}}, {{state}}</span>
+      </div>
+      <div class="meta">
+        by: {{user.username}} on {{format_date created_at}}<br>
+        <a href="/trail/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+      </div>
+    </article>
+  </li>
+</ol>
