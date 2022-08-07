@@ -1,0 +1,10 @@
+<article class="trail">
+  <div class="trail-name">
+    <h3 class="trail-heading" >{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3>
+    <p class="trail-description">{{trail.description}}</p>
+  </div>
+  <div class="meta">
+     by: {{trail.user.username}} on {{format_date trail.created_at}}<br>
+        <a href="/trail/{{trail.id}}">{{trail.comments.length}} {{format_plural "comment" comments.length}}</a>
+  </div>
+</article>

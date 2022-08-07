@@ -6,7 +6,7 @@ const trailData = [
     city: 'Lake Elmo',
     state: 'MN',
     distance_miles: 2.3,
-    description: 'Gentle "hills" over grassland, through some trees, and along a lake.',
+    description: 'Gentle "hills" over grassland, through some trees, and along a lake in the east metro Twin Cities area.',
     user_id: 1
   },
   {
@@ -22,7 +22,7 @@ const trailData = [
     city: 'Hanapepe',
     state: 'HI',
     distance_miles: 7.9,
-    description: 'Down some steep slopes, across a cliff side along a goat trail, and then a leg busting up to the top. Worth it though for the spectacular views of the NaPali coast',
+    description: 'Down some steep slopes, across a cliff side along a goat trail, and then a leg busting up to the top. Worth it though for the spectacular views of the NaPali coast.',
     user_id: 3
   },
 ];
