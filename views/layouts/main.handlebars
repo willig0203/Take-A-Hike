@@ -13,6 +13,31 @@
             <h1>
                 <a href="/">Take A Hike</a>
             </h1>
+            <nav>
+                <ul class="nav-list">
+                    <!-- Homepage and gallery for any user, logged in or not -->
+                    <li class="nav-list-item">
+                        <an href="/">Homepage</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="/gallery">Gallery</a>
+                    </li>
+                    <!-- Dashboard and Logout only if user is logged in -->
+                    <li class="nav-list-item">
+                        <a href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="/logout">Logout</a>
+                    </li>
+                    <!-- Login and signup only if user is not logged in -->
+                    <li class="nav-list-item">
+                        <a href="/login">Login</a>
+                    </li>
+                    <li class="nav-list-item">
+                        <a href="/signup">Signup</a>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <main>
             {{{ body }}}
