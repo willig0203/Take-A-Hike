@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <title>Take A Hike</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/public/stylesheets/style.css">
 </head>
+
 <body>
     <div class="wrapper">
-        <header>
-            <h1>
+        <header class="hero is-medium has-text-centered has-text-black has-background-info-light">
+            <h1 class="is-size-2 has-text-black has-text-weight-bold">
                 <a href="/">Take A Hike</a>
             </h1>
-            <nav>
-                <ul class="nav-list">
-                    <!-- Homepage and gallery for any user, logged in or not -->
-                    <li class="nav-list-item">
-                        <an href="/">Homepage</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="/gallery">Gallery</a>
-                    </li>
-                    <!-- Dashboard and Logout only if user is logged in -->
-                    <li class="nav-list-item">
-                        <a href="/dashboard">Dashboard</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="/logout">Logout</a>
-                    </li>
-                    <!-- Login and signup only if user is not logged in -->
-                    <li class="nav-list-item">
-                        <a href="/login">Login</a>
-                    </li>
-                    <li class="nav-list-item">
-                        <a href="/signup">Signup</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="hero-foot">
+                <nav class="tabs is-boxed is-fullwidth has-text-weight-bold">
+                    <div class="container">
+                        <ul class="nav-list">
+                            <!-- Homepage and gallery for any user, logged in or not -->
+                            <li class="nav-list-item">
+                                <an href="/">Homepage</a>
+                            </li>
+                            <li class="nav-list-item">
+                                <a href="/gallery">Gallery</a>
+                            </li>
+                            <!-- Dashboard and Logout only if user is logged in -->
+                            <li class="nav-list-item">
+                                <a href="/dashboard">Dashboard</a>
+                            </li>
+                            <li class="nav-list-item">
+                                <a href="/logout">Logout</a>
+                            </li>
+                            <!-- Login and signup only if user is not logged in -->
+                            <li class="nav-list-item">
+                                <a href="/login">Login</a>
+                            </li>
+                            <li class="nav-list-item">
+                                <a href="/signup">Signup</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
         </header>
         <main>
             {{{ body }}}
@@ -48,6 +54,7 @@
             Thanks for visiting. Now take a hike!
         </footer>
     </div>
-    
+
 </body>
+
 </html>
