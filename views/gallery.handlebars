@@ -1,0 +1,9 @@
+<h2>Gallery</h2>
+{{#each images}}
+<a href="{{image_url}}" target="_blank">
+  <img class="gallery-image" src="{{image_url}}" width="400"> 
+</a>
+<p>{{description}}</p>
+<p>by: {{user.username}}</p>
+<hr>
+{{/each}}

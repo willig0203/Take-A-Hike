@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../../models');
+const { User, Image } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // Get all images
@@ -42,4 +42,42 @@ router.get('/:id', (req, res) => {
       res.status(500).json(err);
     });
 });
+
+
+// Create a new image
+router.post('/', (req, res) => {
+  Image.create({
+    image_url: req.body.image_url,
+    user_id: req.body.user_id,
+    description: req.body.description
+  })
+    .then(dbImageData => res.json(dbImageData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+// Delete a image by ID
+router.delete('/:id', (req, res) => {
+  Image.destroy({
+    individualHooks: true,
+    where: {
+      id: req.params.id
+    }
+  })
+    .then(dbImageData => {
+      if (!dbImageData) {
+        res.status(404).json({ message: 'No image found with this id' });
+        return;
+      }
+      res.json(dbImageData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+module.exports = router;
 
