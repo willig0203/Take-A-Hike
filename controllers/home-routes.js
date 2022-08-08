@@ -82,10 +82,6 @@ router.get('/trail/:id', (req, res) => {
     });
 });
 
-router.get('/dashboard', (req, res) => {
-  res.render('dashboard');
-});
-
 router.get('/gallery', (req, res) => {
   Image.findAll({
     attributes: ['image_url', 'user_id', 'description'],

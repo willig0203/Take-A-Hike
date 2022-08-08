@@ -1,1 +1,53 @@
-<div>You are on the dashboard, you got here by signing up or logging in</div>
+<section>
+  <h2>Add a New Favorite Trail</h2>
+
+  <form class="new-trail-form">
+    <div>
+      <label for="trail-name">Trail Name:</label>
+      <input type="text" id="trail-name" name="trail-name" />
+    </div>
+    <div>
+      <label for="trail-city">City:</label>
+      <input type="text" id="trail-city" name="trail-city" />
+    </div>
+    <div>
+      <label for="trail-state">State:</label>
+      <input type="text" id="trail-state" name="trail-state" />
+    </div>
+    <div>
+      <label for="trail-miles">Trail Length (in Miles):</label>
+      <input type="text" id="trail-miles" name="trail-miles" />
+    </div>
+    <div>
+      <label for="trail-description">Description:</label>
+      <input type="text" id="trail-description" name="trail-description" />
+    </div>
+    <button type="submit" class="btn">Add your trail</button>
+  </form>
+</section>
+
+
+<hr />
+
+  <button id="upload_widget" class="cloudinary-button">Upload files</button>
+
+  
+  <hr />
+
+{{#if trails.length}}
+<section>
+  <h2>Your Trails</h2>
+  <ol>
+    {{#each trails as |trail|}}
+    <li>
+      <h3 class="trail-heading" >{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3>
+      <a href="/dashboard/edit/{{trail.id}}" class="edit-link">Edit post</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+
+<script src="/javascript/dashboard.js"></script>
+
+  
