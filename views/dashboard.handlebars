@@ -51,8 +51,8 @@
   <ol>
     {{#each trails as |trail|}}
     <li>
-      <h3 class="trail-heading" >{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3>
-      <a href="/dashboard/edit/{{trail.id}}" class="edit-link">Edit post</a>
+      <a href="/trail/{{trail.id}}" class="trail-heading" >{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3><br>
+      <a href="/dashboard/edit/{{trail.id}}" class="edit-link">Edit trail</a>
     </li>
     {{/each}}
   </ol>

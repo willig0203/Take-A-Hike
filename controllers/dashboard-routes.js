@@ -5,10 +5,9 @@ const { Trail, User, Comment, Image } = require('../models');
 router.get('/', (req, res) => {
   Trail.findAll({
     where: {
-      //user_id: req.session.user_id 
-      user_id: 1
+      user_id: req.session.user_id 
     },
-    attributes: ['trail_name', 'city', 'state', 'distance_miles'],
+    attributes: ['id', 'trail_name', 'city', 'state', 'distance_miles'],
   })
   .then(dbTrailDate => {
     const trails = dbTrailDate.map(trail => trail.get({ plain: true }));

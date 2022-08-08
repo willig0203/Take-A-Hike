@@ -77,4 +77,3 @@ document.getElementById("upload_widget").addEventListener("click", function(){
   }, false);
   // End citation
 document.querySelector('.new-trail-form').addEventListener('submit', newTrailHandler);
-document.getElementById('go-to-gallery').addEventListener('click', goToGallery);

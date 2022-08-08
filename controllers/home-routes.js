@@ -98,7 +98,7 @@ router.get('/gallery', (req, res) => {
     console.log(err);
     res.status(500).json(err);
   });
-})
+});
 
 //auth
 router.get('/signup', (req, res) => {
