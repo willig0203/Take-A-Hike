@@ -1,4 +1,4 @@
-const cloudName = "dg3k5pgji";
+const cloud_name = "dg3k5pgji";
 
 // New trail handler
 async function newTrailHandler(event) {
@@ -30,16 +30,39 @@ async function newTrailHandler(event) {
   }
 };
 
+function goToGallery(event) {
+  event.preventDefault();
+  console.log('Arrived at goToGallery function');
+};
 
 
 
-function addImgToDB(public_id) {
-  console.log(public_id);
+
+async function addImgToDB(imgID) {
+  const image_url = `https://res.cloudinary.com/${cloud_name}/image/upload/${imgID}.jpg`;
+  const description = document.querySelector('input[name="img-description"]').value;
+  
+  const response = await fetch(`/api/images`, {
+    method: 'POST',
+    body: JSON.stringify({
+      image_url,
+      description
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (response.ok) {
+    document.location.replace('/gallery');
+  } else {
+    alert(response.statusText);
+  }
 };
 
 // Citation: from Cloudinary widget use documentation
 const myWidget = cloudinary.createUploadWidget({
-  cloudName: cloudName, 
+  cloudName: cloud_name, 
   uploadPreset: 'uwvcxasv'}, (error, result) => { 
     if (!error && result && result.event === "success") { 
       console.log('Done! Here is the image info: ', result.info); 
@@ -53,4 +76,5 @@ document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);
   // End citation
-  document.querySelector('.new-trail-form').addEventListener('submit', newTrailHandler);
+document.querySelector('.new-trail-form').addEventListener('submit', newTrailHandler);
+document.getElementById('go-to-gallery').addEventListener('click', goToGallery);

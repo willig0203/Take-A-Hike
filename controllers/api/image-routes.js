@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 // Get all images
 router.get('/', (req, res) => {
   Image.findAll({
-    attributes: ['image_url', 'description', 'user_id'],
+    attributes: ['id', 'image_url', 'description', 'user_id'],
     include: {
       model: User,
       attributes: ['username']
@@ -48,8 +48,8 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
   Image.create({
     image_url: req.body.image_url,
-    user_id: req.body.user_id,
-    description: req.body.description
+    description: req.body.description,
+    user_id: req.session.user_id
   })
     .then(dbImageData => res.json(dbImageData))
     .catch(err => {

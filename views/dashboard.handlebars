@@ -29,14 +29,25 @@
 
 <hr />
 
-  <button id="upload_widget" class="cloudinary-button">Upload files</button>
-
+<section>
+  <h2>Add a Photo To Our Gallery:</h2>
+  <form class="add-photo-form">
+    <div>
+      <label for="img-description">Step 1: Say a few words about your photo here: </label>
+      <input type="text" id="img-description" name="img-description" placeholder="Description of image" />
+    </div>
+  </form>
+  <div class="upload-widget">
+    <label id="widget-label">Step 2: Click the upload button: </label> 
+    <button id="upload_widget" class="cloudinary-button">Upload files</button>
+  </div>
+</section>
   
   <hr />
 
 {{#if trails.length}}
 <section>
-  <h2>Your Trails</h2>
+  <h2>Your Shared Trails</h2>
   <ol>
     {{#each trails as |trail|}}
     <li>
@@ -49,5 +60,6 @@
 {{/if}}
 
 <script src="/javascript/dashboard.js"></script>
+<!-- <script src="/javascript/add-image.js"></script> -->
 
   
