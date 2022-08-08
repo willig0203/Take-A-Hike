@@ -29,20 +29,26 @@
                             <li class="nav-list-item">
                                 <a href="/gallery">Gallery</a>
                             </li>
+
                             <!-- Dashboard and Logout only if user is logged in -->
+                            {{#if loggedIn}}
                             <li class="nav-list-item">
                                 <a href="/dashboard">Dashboard</a>
                             </li>
                             <li class="nav-list-item">
                                 <a href="/logout">Logout</a>
                             </li>
+                            {{/if}}
+
                             <!-- Login and signup only if user is not logged in -->
+                            {{#unless loggedIn}}
                             <li class="nav-list-item">
                                 <a href="/login">Login</a>
                             </li>
                             <li class="nav-list-item">
                                 <a href="/signup">Signup</a>
                             </li>
+                            {{/unless}}
                         </ul>
                     </div>
                 </nav>

@@ -37,7 +37,7 @@ function goToGallery(event) {
 
 
 
-
+// Add image to database using input form description and cloudinary response public_id
 async function addImgToDB(imgID) {
   const image_url = `https://res.cloudinary.com/${cloud_name}/image/upload/${imgID}.jpg`;
   const description = document.querySelector('input[name="img-description"]').value;
@@ -54,13 +54,14 @@ async function addImgToDB(imgID) {
   });
 
   if (response.ok) {
+    // Take user to gallery to see images
     document.location.replace('/gallery');
   } else {
     alert(response.statusText);
   }
 };
 
-// Citation: from Cloudinary widget use documentation
+// Citation: from Cloudinary widget usage documentation
 const myWidget = cloudinary.createUploadWidget({
   cloudName: cloud_name, 
   uploadPreset: 'uwvcxasv'}, (error, result) => { 
@@ -71,9 +72,9 @@ const myWidget = cloudinary.createUploadWidget({
     }
   }
 );
-
 document.getElementById("upload_widget").addEventListener("click", function(){
     myWidget.open();
   }, false);
   // End citation
+
 document.querySelector('.new-trail-form').addEventListener('submit', newTrailHandler);
