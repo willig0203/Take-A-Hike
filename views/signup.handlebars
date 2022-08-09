@@ -6,25 +6,42 @@
     <p class="subtitle is-italic">
       Find hiking trails
     </p>
-
-
-
-
     <form class="signup-form">
-      <div>
+      <div class="field">
         <label for="username-signup">username:</label>
-        <input type="text" id="username-signup" />
+        <p class="control has-icons-left has-icons-right">
+        <input class="input" type="username" placeholder="Username" id="username-signup">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+        </p>
       </div>
-      <div>
+      <div class="field">
         <label for="email-signup">email:</label>
-        <input type="text" id="email-signup" />
+        <p class="control has-icons-left has-icons-right">
+        <input class="input" type="email" placeholder="Email" id="email-signup">
+        <span class="icon is-small is-left">
+          <i class="fas fa-envelope"></i>
+        </span>
+        <span class="icon is-small is-right">
+          <i class="fas fa-check"></i>
+        </span>
+        </p>
       </div>
-      <div>
+      <div class="filed mb-2">
         <label for="password-signup">password:</label>
-        <input type="password" id="password-signup" />
+        <p class="control has-icons-left">
+        <input class="input" type="password" placeholder="Password" id="password-signup">
+        <span class="icon is-small is-left">
+          <i class="fas fa-lock"></i>
+        </span>
+        </p>
       </div>
-      <div>
-        <button type="submit">signup</button>
+      <div class="field">
+        <button class="button is-success-dark">Signup</button>
       </div>
     </form>
   </div>
