@@ -4,6 +4,14 @@ const session = require("express-session");
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
 const exphbs = require("express-handlebars");
+const helpers = require('./utils/helpers');
+const cloudinary = require('cloudinary');
+const cloudinaryConfig = cloudinary.config({
+  cloud_name: process.env.CLOUDNAME,
+  api_key: process.env.CLOUDAPIKEY,
+  api_secret: process.env.CLOUDINARYSECRET,
+  secure: true
+});
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -28,9 +36,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 
-// const helpers = require("./utils/helpers");
-// const hbs = exphbs.create({ helpers });
-const hbs = exphbs.create({});
+const hbs = exphbs.create({ helpers });
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
