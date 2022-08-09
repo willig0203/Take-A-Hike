@@ -1,28 +1,38 @@
 <section class="hero is-success mb-6">
   <div class="hero-body">
     <p class="title is-italic">
-      Success hero
+      Login
     </p>
     <p class="subtitle is-italic">
-      Success subtitle
+      It's free and only takes a minute
     </p>
-
-
-
-
     <form class="login-form">
-      <div>
+      <div class="field">
         <label for="email-login">email:</label>
-        <input type="text" id="email-login" />
+        <p class="control has-icons-left has-icons-right">
+          <input class='input' type="email" placeholder="Email" id="email-login">
+          <span class="icon is-small is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-small is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </p>
       </div>
-      <div>
+      <div class="field">
         <label for="password-login">password:</label>
-        <input type="password" id="password-login" />
+        <p class="control has-icons-left">  
+          <input class="input" type="password" placeholder="Password" id="password-login">
+          <span class="icon is-small is-left">
+            <i class="fas fa-lock"></i>
+          </span>
+        </p>
       </div>
-      <div>
-        <button type="submit">Login</button>
+      <div class="field">
+        <button class="button is-success-dark">Login</button>
       </div>
     </form>
   </div>
 </section>
 <script src="/javascript/login.js"></script>
+
