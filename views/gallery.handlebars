@@ -1,9 +1,21 @@
-<h2>Gallery</h2>
-{{#each images}}
-<a href="{{image_url}}" target="_blank">
-  <img class="gallery-image" src="{{image_url}}" width="400"> 
-</a>
-<p>{{description}}</p>
-<p>by: {{user.username}}</p>
-<hr>
-{{/each}}
+<section class="hero is-success mb-6">
+  <div class="hero-body">
+    <p class="title is-italic">
+      Gallery
+    </p>
+    <p class="subtitle is-italic">
+      Take a look!
+    </p>
+
+  
+    {{#each images}}
+    <a href="{{image_url}}" target="_blank">
+      <img class="gallery-image" src="{{image_url}}" width="400">
+    </a>
+    <p>{{description}}</p>
+    <p>by: {{user.username}}</p>
+    <hr>
+    {{/each}}
+
+  </div>
+</section>

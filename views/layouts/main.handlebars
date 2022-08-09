@@ -14,17 +14,16 @@
 
 <body>
     <div class="wrapper">
-        <header class="hero is-medium has-text-centered has-text-black has-background-info-light">
-            <h1 class="is-size-2 has-text-black has-text-weight-bold">
+        <header class="hero is-medium has-text-centered has-text-black has-background-light">
+            <h1 class="is-size-2 has-text-white has-text-weight-bold">
                 <a href="/">Take A Hike</a>
             </h1>
             <div class="hero-foot">
                 <nav class="tabs is-boxed is-fullwidth has-text-weight-bold">
-                    <div class="container">
                         <ul class="nav-list">
                             <!-- Homepage and gallery for any user, logged in or not -->
                             <li class="nav-list-item">
-                                <a href="/">Homepage</a>
+                                <a href="/">Home</a>
                             </li>
                             <li class="nav-list-item">
                                 <a href="/gallery">Gallery</a>
@@ -57,8 +56,10 @@
         <main>
             {{{ body }}}
         </main>
-        <footer>
+        <footer class="footer">
+            <div class="content has-text-centered">
             Thanks for visiting. Now take a hike!
+            </div>
         </footer>
     </div>
     <script src="/javascript/dashboard.js"></script>
