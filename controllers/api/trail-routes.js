@@ -49,7 +49,7 @@ router.post('/', (req, res) => {
     state: req.body.state,
     distance_miles: req.body.distance_miles,
     description: req.body.description,
-    user_id: req.body.user_id
+    user_id: req.session.user_id
   }).then(dbTrailData => res.json(dbTrailData))
     .catch(err => {
       console.log(err);

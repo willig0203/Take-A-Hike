@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
-const { Trail, User, Comment } = require('../models');
+const { Trail, User, Comment, Image } = require('../models');
 
 
 router.get('/', (req, res) => {
@@ -82,11 +82,25 @@ router.get('/trail/:id', (req, res) => {
     });
 });
 
-router.get('/dashboard', (req, res) => {
-  res.render('dashboard');
+router.get('/gallery', (req, res) => {
+  Image.findAll({
+    attributes: ['image_url', 'user_id', 'description'],
+    include: {
+      model: User,
+      attributes: ['username']
+    }
+  })
+  .then(dbImageData => {
+    const images = dbImageData.map(image => image.get({ plain: true }));
+    res.render('gallery', { images });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
-// auth
+//auth
 router.get('/signup', (req, res) => {
   res.render('signup');
 });
