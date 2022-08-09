@@ -1,9 +1,23 @@
 const router = require('express').Router();
 const { Trail, Comment, User } = require('../../models');
-
+const withAuth = require('../../utils/auth')
 router.get('/', (req, res) => {
   Trail.findAll({
-    attributes: ['id', 'trail_name', 'city', 'state', 'distance_miles', 'description', 'user_id']
+    attributes: ['id', 'trail_name', 'city', 'state', 'distance_miles', 'description', 'user_id'],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'trail_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   }).then(dbTrailData => res.json(dbTrailData))
     .catch(err => {
       console.log(err);
@@ -41,7 +55,7 @@ router.get('/:id', (req, res) => {
     res.status(500).json(err);
   })
 })
-router.post('/', (req, res) => {
+router.post('/', withAuth,(req, res) => {
   //if(req.session) {
   Trail.create({
     trail_name: req.body.trail_name,
@@ -57,7 +71,7 @@ router.post('/', (req, res) => {
     });
   //}
 });
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth,(req, res) => {
   Trail.update(req.body, {
     where: {
       id: req.params.id
@@ -75,7 +89,7 @@ router.put('/:id', (req, res) => {
   });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id',withAuth, (req, res) => {
   Trail.destroy({
     where: {
       id: req.params.id
