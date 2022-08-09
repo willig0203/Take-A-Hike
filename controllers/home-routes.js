@@ -29,7 +29,10 @@ router.get('/', (req, res) => {
   })
     .then(dbTrailData => {
       const trails = dbTrailData.map(trail => trail.get({ plain: true }));
-      res.render('homepage', { trails });
+      res.render('homepage', {
+        trails,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch(err => {
       console.log(err);
@@ -74,7 +77,10 @@ router.get('/trail/:id', (req, res) => {
 
       const trail = dbTrailData.get({ plain: true });
 
-      res.render('single-trail', { trail });
+      res.render('single-trail', {
+        trail,
+        loggedIn: req.session.loggedIn
+      });
     })
     .catch(err => {
       console.log(err);
@@ -90,14 +96,17 @@ router.get('/gallery', (req, res) => {
       attributes: ['username']
     }
   })
-  .then(dbImageData => {
-    const images = dbImageData.map(image => image.get({ plain: true }));
-    res.render('gallery', { images });
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
+    .then(dbImageData => {
+      const images = dbImageData.map(image => image.get({ plain: true }));
+      res.render('gallery', {
+        images,
+        loggedIn: req.session.loggedIn
+      });
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
 });
 
 //auth

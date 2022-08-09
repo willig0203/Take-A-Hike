@@ -8,6 +8,20 @@ router.get('/', (req, res) => {
       user_id: req.session.user_id 
     },
     attributes: ['id', 'trail_name', 'city', 'state', 'distance_miles'],
+    include: [
+      {
+        model: Comment,
+        attributes: ['id', 'comment_text', 'trail_id', 'user_id', 'created_at'],
+        include: {
+          model: User,
+          attributes: ['username']
+        }
+      },
+      {
+        model: User,
+        attributes: ['username']
+      }
+    ]
   })
   .then(dbTrailDate => {
     const trails = dbTrailDate.map(trail => trail.get({ plain: true }));

@@ -1,7 +1,7 @@
 async function logoutFormHandler(event) {
   event.preventDefault();
 
-  const response = await fetch("/api/userAuth/logout", {
+  const response = await fetch("/api/users/logout", {
     method: "post",
     headers: { "Content-Type": "application/json" },
   });
