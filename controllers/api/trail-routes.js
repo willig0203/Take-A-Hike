@@ -67,7 +67,7 @@ router.post('/', withAuth,(req, res) => {
   }).then(dbTrailData => res.json(dbTrailData))
     .catch(err => {
       console.log(err);
-      res.json(400).json(err)
+      res.status(400).json(err)
     });
   //}
 });
