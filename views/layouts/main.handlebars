@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     <script src="https://kit.fontawesome.com/da1e08d213.js" crossorigin="anonymous"></script>
-    
+
     <title>Take A Hike</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
@@ -15,53 +15,62 @@
 
 <body>
     <div class="wrapper">
-        <header class="hero is-medium has-text-centered has-text-black has-background-light">
-            <h1 class="is-size-2 has-text-white has-text-weight-bold">
-                <a href="/">Take A Hike</a>
-            </h1>
+        <header class="hero is-medium has-text-centered has-text-black has-background-white">
+            <div class="card-image has-text-block">
+                <figure class="image is-128x128 is-inline-block">
+                    <img class="is-rounded" src="/images/logo.jpeg" alt="Logo">
+                </figure>
+            </div>
             <div class="hero-foot">
                 <nav class="tabs is-boxed is-fullwidth has-text-weight-bold">
-                        <ul class="nav-list">
-                            <!-- Homepage and gallery for any user, logged in or not -->
-                            <li class="nav-list-item">
-                                <a href="/">Home</a>
-                            </li>
-                            <li class="nav-list-item">
-                                <a href="/gallery">Gallery</a>
-                            </li>
+                    <ul class="nav-list">
+                        <!-- Homepage and gallery for any user, logged in or not -->
+                        <li class="nav-list-item">
+                            <a href="/">Home</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="/gallery">Gallery</a>
+                        </li>
 
-                            <!-- Dashboard and Logout only if user is logged in -->
-                            {{#if loggedIn}}
-                            <li class="nav-list-item">
-                                <a href="/dashboard">Dashboard</a>
-                            </li>
-                            <li class="nav-list-item">
-                                <a href="/logout">Logout</a>
-                            </li>
-                            
+                        <!-- Dashboard and Logout only if user is logged in -->
+                        {{#if loggedIn}}
+                        <li class="nav-list-item">
+                            <a href="/dashboard">Dashboard</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="/logout">Logout</a>
+                        </li>
 
-                            <!-- Login and signup only if user is not logged in -->
-                            {{else}}
-                            <li class="nav-list-item">
-                                <a href="/login">Login</a>
-                            </li>
-                            <li class="nav-list-item">
-                                <a href="/signup">Signup</a>
-                            </li> 
-                            {{/if}}
-                        </ul>
-                    </div>
-                </nav>
+
+                        <!-- Login and signup only if user is not logged in -->
+                        {{else}}
+                        <li class="nav-list-item">
+                            <a href="/login">Login</a>
+                        </li>
+                        <li class="nav-list-item">
+                            <a href="/signup">Signup</a>
+                        </li>
+                        {{/if}}
+                    </ul>
             </div>
-        </header>
-        <main>
-            {{{ body }}}
-        </main>
-        <footer class="footer">
-            <div class="content has-text-centered">
-            Thanks for visiting. Now take a hike!
+            </nav>
+    </div>
+    </header>
+    <main>
+        {{{ body }}}
+    </main>
+    <footer class="footer has-background-white is-fullwidth">
+        <div class="card-image">
+            <figure class="image">
+                <img class="image is-fullwidth" src="/images/trees.jpeg" alt="Tree">
+            </figure>
+
+            <div class="content has-text-centered has-background-white">
+                Thanks for visiting. Now take a hike!
             </div>
-        </footer>
+        </div>
+    </footer>
+
     </div>
     <script src="/javascript/dashboard.js"></script>
 </body>
