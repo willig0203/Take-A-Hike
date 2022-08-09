@@ -38,17 +38,17 @@
                             <li class="nav-list-item">
                                 <a href="/logout">Logout</a>
                             </li>
-                            {{/if}}
+                            
 
                             <!-- Login and signup only if user is not logged in -->
-                            {{#unless loggedIn}}
+                            {{else}}
                             <li class="nav-list-item">
                                 <a href="/login">Login</a>
                             </li>
                             <li class="nav-list-item">
                                 <a href="/signup">Signup</a>
-                            </li>
-                            {{/unless}}
+                            </li> 
+                            {{/if}}
                         </ul>
                     </div>
                 </nav>
