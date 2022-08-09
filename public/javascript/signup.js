@@ -1,18 +1,18 @@
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
-// const plainTextPassword1 = "DFGh5546*%^__90";
-
-// create a new password
-function getPasswordHash(password) {
-  bcrypt
-    .hash(password, saltRounds)
-    .then((hash) => {
-      console.log(`Hash: ${hash}`);
-      // Store hash in your password DB.
-      return hash;
-    })
-    .catch((err) => console.error(err.message));
-}
+//const bcrypt = require("bcrypt");
+//const saltRounds = 10;
+//// const plainTextPassword1 = "DFGh5546*%^__90";
+//
+//// create a new password
+//function getPasswordHash(password) {
+//  bcrypt
+//    .hash(password, saltRounds)
+//    .then((hash) => {
+//      console.log(`Hash: ${hash}`);
+//      // Store hash in your password DB.
+//      return hash;
+//    })
+//    .catch((err) => console.error(err.message));
+//}
 
 async function signupFormHandler(event) {
   event.preventDefault();
@@ -33,7 +33,8 @@ async function signupFormHandler(event) {
       body: JSON.stringify({
         username,
         email,
-        passwordHash,
+        //passwordHash,
+        password
       }),
       headers: { "Content-Type": "application/json" },
     });

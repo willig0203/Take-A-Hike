@@ -1,16 +1,16 @@
-// check password
-const bcrypt = require("bcrypt");
-// const hash = "$2b$10$69SrwAoAUNC5F.gtLEvrNON6VQ5EX89vNqLEqU655Oy9PeT/HRM/a";
-
-function checkPassword(password) {
-  bcrypt
-    .compare(password, hash)
-    .then((res) => {
-      console.log(res);
-      return res;
-    })
-    .catch((err) => console.error(err.message));
-}
+//// check password
+//const bcrypt = require("bcrypt");
+//// const hash = "$2b$10$69SrwAoAUNC5F.gtLEvrNON6VQ5EX89vNqLEqU655Oy9PeT/HRM/a";
+//
+//function checkPassword(password) {
+//  bcrypt
+//    .compare(password, hash)
+//    .then((res) => {
+//      console.log(res);
+//      return res;
+//    })
+//    .catch((err) => console.error(err.message));
+//}
 
 async function loginFormHandler(event) {
   event.preventDefault();
@@ -24,8 +24,8 @@ async function loginFormHandler(event) {
       method: 'post',
 
   //if (email && password && checkPassword(password)) {
-    //const response = await fetch("/api/userAuth/login", {
-      //method: "post",
+  //  const response = await fetch("/api/user/login", {
+  //    method: "post",
       body: JSON.stringify({
         email,
         password
