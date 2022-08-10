@@ -17,7 +17,8 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "jest"
+    "test": "jest",
+    "seeds": "node seeds/index.js"
   },
   "name": "take-a-hike",
   "description": "U of M Group Project Number 2",
