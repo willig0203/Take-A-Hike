@@ -1,46 +1,37 @@
 <section class="hero is-success">
   <div class="hero-body">
     <p class="title">
-      Success hero
+      <i>{{trail.trail_name}}</i>, {{trail.city}}, {{trail.state}}
     </p>
     <p class="subtitle">
-      Success subtitle
     </p>
   </div>
 </section>
 
-
-<article class="trail">
+<section class="mx-2">
+<article class="mb-4">
   <div class="trail-name">
-    <h3 class="trail-heading">{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3>
-    <p class="trail-description">{{trail.description}}</p>
+    <p class="is-size-4 has-text-centered">{{trail.description}}</p>
   </div>
   <div class="meta">
     by: {{trail.user.username}} on {{format_date trail.created_at}}<br>
-    {{trail.comments.length}} {{format_plural "comment" comments.length}}:
 </article>
 
+{{#if loggedIn}}
 <form class="comment-form">
   <div>
     <textarea name="comment-body"></textarea>
   </div>
 
   <div>
-    <button type="submit">add comment</button>
+    <button type="submit" class="button is-success is-outlined">add comment</button>
   </div>
 </form>
+{{/if}}
 
-<div class="comments">
-  {{#each trail.comments}}
-  <section class="comment">
-    <div class="meta">
-      {{user.username}} on {{created_at}}
-    </div>
-    <div class="text">
-      {{comment_text}}
-    </div>
-  </section>
-  {{/each}}
-</div>
+{{> comments trail.comments}}
+</section>
 
+{{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
+{{/if}}
