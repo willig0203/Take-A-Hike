@@ -29,13 +29,13 @@ Use the live app on Heroku: [https://taka-hike.herokuapp.com/](https://takea-hik
 
 ## Screenshots
 
-<p class="cssclass1 cssclass2">
-  <img src="./assets/images/homescreenshot.jpg" alt="Logo" title="Logo Computer">
+<p>
   <em>Computer</em>
+  <img src="./assets/images/homescreenshot.jpg" alt="Logo" title="Logo Computer">
 </p>
-<p class="cssclass1 cssclass2">
-  <img src="./assets/images/homescreenshotmobile.jpg" alt="Logo" title="Logo Mobile Device">
+<p>
   <em>Mobile Device</em>
+  <img src="./assets/images/homescreenshotmobile.jpg" alt="Logo" title="Logo Mobile Device">
 </p>
 
 ## License
