@@ -3,7 +3,7 @@ const { User,Comment, Trail} = require('../../models');
 
 router.get('/', (req, res) => {
   User.findAll({
-    attributes: { exclude: ['password'] }
+    //attributes: { exclude: ['password'] }
   })
     .then(dbUserData => {
       res.json(dbUserData);
@@ -67,6 +67,7 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
   });
+
 router.post('/login', (req,res) => {
   User.findOne({
     where: {
@@ -77,12 +78,11 @@ router.post('/login', (req,res) => {
       res.status(400).json({message: 'No user with that email address'});
       return;
     }
-    // const validPassword = dbUserData.checkPassword(req.body.password);
-
-    // if(!validPassword) {
-    //   res.status(400).json({message: 'Incorrect Password'});
-    //   return;
-    // }
+     const validPassword = dbUserData.checkPassword(req.body.password)
+     if(!validPassword) {
+       res.status(400).json({message: 'Incorrect Password'});
+       return;
+     }
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
@@ -91,7 +91,8 @@ router.post('/login', (req,res) => {
       res.json({user: dbUserData, message: 'You are logged in!'});
     });
   });
-})
+});
+
 router.post('/logout', (req, res) => {
   if(req.session.loggedIn) {
     req.session.destroy(() => {
