@@ -33,6 +33,7 @@ Use the live app on Heroku: [https://taka-hike.herokuapp.com/](https://takea-hik
   <em>Computer</em>
   <img src="./assets/images/homescreenshot.jpg" alt="Logo" title="Logo Computer">
 </p>
+
 <p>
   <em>Mobile Device</em>
   <img src="./assets/images/homescreenshotmobile.jpg" alt="Logo" title="Logo Mobile Device">
