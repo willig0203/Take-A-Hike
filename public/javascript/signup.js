@@ -1,19 +1,3 @@
-const bcrypt = require("bcrypt");
-const saltRounds = 10;
-// const plainTextPassword1 = "DFGh5546*%^__90";
-
-// create a new password
-function getPasswordHash(password) {
-  bcrypt
-    .hash(password, saltRounds)
-    .then((hash) => {
-      console.log(`Hash: ${hash}`);
-      // Store hash in your password DB.
-      return hash;
-    })
-    .catch((err) => console.error(err.message));
-}
-
 async function signupFormHandler(event) {
   event.preventDefault();
 
@@ -24,16 +8,14 @@ async function signupFormHandler(event) {
   const passwordHash = "";
 
   if (username && email && password) {
-
     const response = await fetch("/api/users", {
-
-    //passwordHash = getPasswordHash(password);
-    //const response = await fetch("/api/userAuth", {
+      //passwordHash = getPasswordHash(password);
+      //const response = await fetch("/api/userAuth", {
       method: "post",
       body: JSON.stringify({
         username,
         email,
-        passwordHash,
+        password,
       }),
       headers: { "Content-Type": "application/json" },
     });
@@ -46,4 +28,6 @@ async function signupFormHandler(event) {
   }
 }
 
-document.querySelector(".signup-form").addEventListener("submit", signupFormHandler);
+document
+  .querySelector(".signup-form")
+  .addEventListener("submit", signupFormHandler);
