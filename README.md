@@ -29,12 +29,12 @@ Use the live app on Heroku: [https://taka-hike.herokuapp.com/](https://takea-hik
 
 ## Screenshots
 
-|:--:|
-| <b>Image running on a computer</b>|
+|         <b>Image running on a computer</b>         |
+| :------------------------------------------------: |
 | ![space-1.jpg](./assets/images/homescreenshot.jpg) |
 
-|:--:|
-| <b>Image running on a mobile device</b>|
+|         <b>Image running on a mobile device</b>          |
+| :------------------------------------------------------: |
 | ![space-2.jpg](./assets/images/homescreenshotmobile.jpg) |
 
 ## License
