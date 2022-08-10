@@ -17,7 +17,7 @@
 
 ## Installation
 
-Clone the repository from GitHub onto your machine in a local folder. This program will require Node.js and MySQL. Install node.js: [Installation Guide](https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs). Install MySQL: [Installation Guide](https://coding-boot-camp.github.io/full-stack/mysql/mysql-installation-guide). From the root of the project folder do an npm (Node Package Manager) install to get the package dependencies (type `npm install` on the command line). Dependencies used are: bcrypt, bulma, cloudinary, connect-session, connect-session-sequelize, dotenv, express, express-handlebars, express-session, express-session-sequelize, jest, mysql, mysql2, and sequelize.
+Clone the repository from [GitHub](https://github.com/willig0203/Take-A-Hike) onto your machine in a local folder. This program will require Node.js and MySQL. Install node.js: [Installation Guide](https://coding-boot-camp.github.io/full-stack/nodejs/how-to-install-nodejs). Install MySQL: [Installation Guide](https://coding-boot-camp.github.io/full-stack/mysql/mysql-installation-guide). From the root of the project folder do an npm (Node Package Manager) install to get the package dependencies (type `npm install` on the command line). Dependencies used are: bcrypt, bulma, cloudinary, connect-session, connect-session-sequelize, dotenv, express, express-handlebars, express-session, express-session-sequelize, jest, mysql, mysql2, and sequelize.
 
 ## Usage
 
@@ -29,8 +29,14 @@ Use the live app on Heroku: [https://taka-hike.herokuapp.com/](https://takea-hik
 
 ## Screenshots
 
-![Computer](./assets/images/homescreenshot.jpg)
-![Mobile Device](./assets/images/homescreenshotmobile.jpg)
+<p class="cssclass1 cssclass2">
+  <img src="./assets/images/homescreenshot.jpg" alt="Logo" title="Logo Computer">
+  <em>Computer</em>
+</p>
+<p class="cssclass1 cssclass2">
+  <img src="./assets/images/homescreenshotmobile.jpg" alt="Logo" title="Logo Mobile Device">
+  <em>Mobile Device</em>
+</p>
 
 ## License
 
@@ -40,10 +46,7 @@ https://opensource.org/licenses/MIT
 
 ## Collaborators:
 
-Amy McCabe
-Michael Atwood
-Mitchel Eide
-Gary Williams
+Amy McCabe, Michael Atwood, Mitchel Eide, Gary Williams
 
 ## Contributing
 
@@ -55,4 +58,4 @@ Follow the usage instructions for seeding the project.
 
 ## Questions
 
-Contact me at: [mcca0168@umn.edu](mailto:mcca0168@umn.edu) or [GitHub](https://github.com/McAmy2001/)
+Contact Amy McCabe at: [mcca0168@umn.edu](mailto:mcca0168@umn.edu) or [GitHub](https://github.com/McAmy2001/)
