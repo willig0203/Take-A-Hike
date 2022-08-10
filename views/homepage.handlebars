@@ -1,1 +1,25 @@
-<div>You are on the homepage</div>
+<section class="hero is-success">
+  <div class="hero-body">
+    <p class="title is-italic">
+      Trails we love:
+    </p>
+
+    <ol class="trail-list">
+      {{#each trails}}
+      <li>
+        <article class="trail">
+          <div class="trail-name">
+            <a href="/trail/{{id}}">{{trail_name}}</a>
+            <span>{{city}}, {{state}}</span>
+          </div>
+          <div class="meta">
+            by: {{user.username}} on {{format_date created_at}}<br>
+            <a href="/trail/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+          </div>
+        </article>
+      </li>
+      {{/each}}
+    </ol>
+
+  </div>
+</section>

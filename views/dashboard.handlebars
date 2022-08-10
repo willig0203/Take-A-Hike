@@ -1,0 +1,72 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <p class="title is-italic">
+      Leave a trail!
+    </p>
+  
+
+<section>
+  <h2>Add a New Favorite Trail</h2>
+
+  <form class="new-trail-form">
+    <div>
+      <label for="trail-name">Trail Name:</label>
+      <input type="text" id="trail-name" name="trail-name" />
+    </div>
+    <div>
+      <label for="trail-city">City:</label>
+      <input type="text" id="trail-city" name="trail-city" />
+    </div>
+    <div>
+      <label for="trail-state">State:</label>
+      <input type="text" id="trail-state" name="trail-state" />
+    </div>
+    <div>
+      <label for="trail-miles">Trail Length (in Miles):</label>
+      <input type="text" id="trail-miles" name="trail-miles" />
+    </div>
+    <div>
+      <label for="trail-description">Description:</label>
+      <input type="text" id="trail-description" name="trail-description" />
+    </div>
+    <button type="submit" class="btn">Add your trail</button>
+  </form>
+</section>
+
+
+<hr />
+
+<section>
+  <h2>Add a Photo To Our Gallery:</h2>
+  <form class="add-photo-form">
+    <div>
+      <label for="img-description">Step 1: Say a few words about your photo here: </label>
+      <input type="text" id="img-description" name="img-description" placeholder="Description of image" />
+    </div>
+  </form>
+  <div class="upload-widget">
+    <label id="widget-label">Step 2: Click the upload button: </label> 
+    <button id="upload_widget" class="cloudinary-button">Upload files</button>
+  </div>
+</section>
+  
+  <hr />
+
+{{#if trails.length}}
+<section>
+  <h2>Trails You've Shared:</h2>
+  <ol>
+    {{#each trails as |trail|}}
+    <li>
+      <a href="/trail/{{trail.id}}" class="trail-heading" >{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3><br>
+      <a href="/dashboard/edit/{{trail.id}}" class="edit-link">Edit trail</a>
+    </li>
+    {{/each}}
+  </ol>
+</section>
+{{/if}}
+</div>
+</section>
+<!--<script src="/javascript/dashboard.js"></script> -->
+
+  

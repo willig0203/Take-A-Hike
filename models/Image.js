@@ -1,34 +1,22 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Trail extends Model { }
+class Image extends Model { }
 
-Trail.init(
+Image.init(
   {
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
-    trail_name: {
+    image_url: {
       type: DataTypes.STRING,
-      allowNull: false
-    },
-    city: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    state: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
-    distance_miles: {
-      type: DataTypes.DECIMAL,
-      allowNull: false
+      allowNull: false,
     },
     description: {
-      type: DataTypes.TEXT,
+      type: DataTypes.STRING,
       allowNull: true
     },
     user_id: {
@@ -43,8 +31,8 @@ Trail.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'trail'
+    modelName: 'image'
   }
 );
 
-module.exports = Trail;
+module.exports = Image;

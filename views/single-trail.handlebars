@@ -1,0 +1,46 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <p class="title">
+      Success hero
+    </p>
+    <p class="subtitle">
+      Success subtitle
+    </p>
+  </div>
+</section>
+
+
+<article class="trail">
+  <div class="trail-name">
+    <h3 class="trail-heading">{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3>
+    <p class="trail-description">{{trail.description}}</p>
+  </div>
+  <div class="meta">
+    by: {{trail.user.username}} on {{format_date trail.created_at}}<br>
+    {{trail.comments.length}} {{format_plural "comment" comments.length}}:
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+
+<div class="comments">
+  {{#each trail.comments}}
+  <section class="comment">
+    <div class="meta">
+      {{user.username}} on {{created_at}}
+    </div>
+    <div class="text">
+      {{comment_text}}
+    </div>
+  </section>
+  {{/each}}
+</div>
+
+<script src="/javascript/comment.js"></script>
