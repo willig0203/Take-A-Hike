@@ -11,22 +11,22 @@ async function newTrailHandler(event) {
   const description = document.querySelector('input[name="trail-description"]').value;
 
   const response = await fetch(`api/trails`, {
-      method: 'POST',
-      body: JSON.stringify({
-          trail_name: trail_name,
-          city: city,
-          state: state,
-          distance_miles: distance_miles,
-          description: description
-      }),
-      headers: {
-          'Content-Type': 'application/json'
-      }
+    method: 'POST',
+    body: JSON.stringify({
+      trail_name: trail_name,
+      city: city,
+      state: state,
+      distance_miles: distance_miles,
+      description: description
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
   });
-  if(response.ok) {
-      document.location.replace('/dashboard');
+  if (response.ok) {
+    document.location.replace('/dashboard');
   } else {
-      alert(response.statusText);
+    alert(response.statusText);
   }
 };
 
@@ -41,7 +41,7 @@ function goToGallery(event) {
 async function addImgToDB(imgID) {
   const image_url = `https://res.cloudinary.com/${cloud_name}/image/upload/${imgID}.jpg`;
   const description = document.querySelector('input[name="img-description"]').value;
-  
+
   const response = await fetch(`/api/images`, {
     method: 'POST',
     body: JSON.stringify({
@@ -63,18 +63,30 @@ async function addImgToDB(imgID) {
 
 // Citation: from Cloudinary widget usage documentation
 const myWidget = cloudinary.createUploadWidget({
-  cloudName: cloud_name, 
-  uploadPreset: 'uwvcxasv'}, (error, result) => { 
-    if (!error && result && result.event === "success") { 
-      console.log('Done! Here is the image info: ', result.info); 
-      const imgID = result.info["public_id"];
-      addImgToDB(imgID);
-    }
+  cloudName: cloud_name,
+  uploadPreset: 'uwvcxasv'
+}, (error, result) => {
+  if (!error && result && result.event === "success") {
+    console.log('Done! Here is the image info: ', result.info);
+    const imgID = result.info["public_id"];
+    addImgToDB(imgID);
   }
+}
 );
-document.getElementById("upload_widget").addEventListener("click", function(){
-    myWidget.open();
-  }, false);
-  // End citation
 
-document.querySelector('.new-trail-form').addEventListener('submit', newTrailHandler);
+document.onreadystatechange = function () {
+  if (document.readyState == "complete") {
+    document.getElementById("upload_widget").addEventListener("click", function () {
+      myWidget.open();
+    }, false);
+    // End citation
+
+    document.querySelector('.new-trail-form').addEventListener('submit', newTrailHandler);
+  }
+}
+//document.getElementById("upload_widget").addEventListener("click", function(){
+//    myWidget.open();
+//  }, false);
+//  // End citation
+//
+//document.querySelector('.new-trail-form').addEventListener('submit', newTrailHandler);
