@@ -1,0 +1,49 @@
+<article>
+  <a href="/dashboard"> &larr; Back to dashboard</a>
+  <h2>
+    Edit Trail
+  </h2>
+  <form class="edit-trail-form">
+    <div>
+      <span>Edit Trail Name:</span>
+      <input name="trail-name" type="text" value="{{trail.trail_name}}" />
+    </div>
+    <div>
+      <span>Edit City:</span>
+      <input name="city" type="text" value="{{trail.city}}" />
+    </div>
+    <div>
+      <span>Edit State:</span>
+      <input name="state" type="text" value="{{trail.state}}" />
+    </div>
+    <div>
+      <span>Edit Distance (in miles):</span>
+      <input name="distance_miles" type="text" value="{{trail.distance_miles}}" />
+    </div>
+    <div>
+      <span>Edit Description:</span>
+      <textarea name="description" id="trail-description" value="{{trail.description}}"></textarea>
+    </div>
+    <div>
+      <a href="/trail/{{trail.id}}">{{trail.comments.length}} {{format_plural "comment" trail.comments.length}}</a>
+    </div>
+    <button type="submit">Save Trail</button>
+    <button type="button" class="delete-trail-btn">Delete Trail</button>
+  </form>
+</article>
+
+<form class="comment-form">
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">Add Comment</button>
+  </div>
+</form>
+
+{{> comments trail.comments}}
+
+<script src="/javascript/edit-trail.js"></script>
+<script src="/javascript/delete-trail.js"></script>
+<script src="/javascript/comment.js"></script>

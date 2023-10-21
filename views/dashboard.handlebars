@@ -6,7 +6,7 @@
   
 
 <section>
-  <h2>Add a New Favorite Trail</h2>
+  <h2 class="is-size-4">Add a New Favorite Trail:</h2>
 
   <form class="new-trail-form">
     <div>
@@ -37,7 +37,7 @@
 <hr />
 
 <section>
-  <h2>Add a Photo To Our Gallery:</h2>
+  <h2 class="is-size-4">Add a Photo To Our Gallery:</h2>
   <form class="add-photo-form">
     <div>
       <label for="img-description">Step 1: Say a few words about your photo here: </label>
@@ -54,15 +54,17 @@
 
 {{#if trails.length}}
 <section>
-  <h2>Trails You've Shared:</h2>
-  <ol>
+  <h2 class="is-size-4">Trails You've Shared:</h2>
+  <ul>
     {{#each trails as |trail|}}
     <li>
       <a href="/trail/{{trail.id}}" class="trail-heading" >{{trail.trail_name}}, {{trail.city}}, {{trail.state}}</h3><br>
+      <p>{{trail.description}}</p><br>
       <a href="/dashboard/edit/{{trail.id}}" class="edit-link">Edit trail</a>
     </li>
+    <hr>
     {{/each}}
-  </ol>
+  </ul>
 </section>
 {{/if}}
 </div>
